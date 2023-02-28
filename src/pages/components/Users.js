@@ -1,31 +1,34 @@
 import * as React from 'react';
-
+import { useNavigate, Link, Outlet} from 'react-router-dom';
 const Users = () => {
+    const navigate = useNavigate()
+
+    const goUsersniveluno = () => {
+        navigate("/Dashboard/Users/Usersniveluno")
+    }
+    const goUsersniveldos = () => {
+        navigate("/Dashboard/Users/Usersniveldos")
+    }
+    const goUsersniveltres = () => {
+        navigate("/Dashboard/Users/Usersniveltres")
+    }
     return (
         <div >
-            <h1>Lista de usuarios</h1>
-            <table>
-                <tr>
-                    <th>Id</th>
-                    <th>Nombres</th>
-                    <th>Pais</th>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Pedro Fernandez</td>
-                    <td>Martinez</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Lorenzo Gomez</td>
-                    <td>Mexico</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Luisa Paredes</td>
-                    <td>Peru</td>
-                </tr>
-            </table>
+        <h1>Niveles de usuario</h1>
+        <p>Subruta 3</p>
+        <hr />
+        <div>
+              <button onMouseOver={goUsersniveluno}>
+                <Link to="/Dashboard/Users/Usersniveluno">Usersniveluno</Link>
+              </button>
+              <button onMouseOver={goUsersniveldos}>
+                <Link to="/Dashboard/Users/Usersniveldos">Usersniveldos</Link>
+              </button>
+              <button onMouseOver={goUsersniveltres}>
+               <Link to="/Dashboard/Users/Usersniveltres">Usersniveltres</Link>
+              </button>
+         </div>
+         <Outlet /> 
         </div>
     )
 }
